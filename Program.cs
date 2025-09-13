@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Runtime.InteropServices;
 using Microsoft.Win32;
 
 namespace TaskTracker
@@ -7,6 +8,12 @@ namespace TaskTracker
     {
         static void Main(string[] args)
         {
+            ExecutarSoma();
+        }
+        
+        static void MostrarProdutos()
+        {
+             
             string produto1 = "Computador";
             string produto2 = "Mesa de Escritório";
 
@@ -27,8 +34,17 @@ namespace TaskTracker
             Console.WriteLine($"Medida com oito casas decimais: {medida:F8}");
             Console.WriteLine($"Arredondando: {medida:F3}");
             Console.WriteLine("Separador decimal invariant culture: " + medida.ToString("F3", CultureInfo.InvariantCulture));
-            
-            
+
+
         }
+        
+        static void ExecutarSoma()
+        {
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            int n2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine($"{n1} + {n2} = {n1 + n2}");
+        }
+        
     }
 }
